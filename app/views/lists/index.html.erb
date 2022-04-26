@@ -1,9 +1,37 @@
-<h1>My lists</h1>
-
-<% @lists.each do |list| %>
-<div>
-<%= link_to list.name, list_path(list) %>
+<div class="navbar" data-controller="navbar" data-action="scroll@window->navbar#updateNavbar">
+  <h1>Watchlist</h1>
+  <i class="fa-solid fa-popcorn"></i>
+  <div class="menu">
+    <div class="menu-item">
+      <%= link_to 'My Lists', lists_path %>
+    </div>
+    <div class="menu-item">
+      <%= link_to 'New List', new_list_path(@list) %>
+    </div>
+  </div>
 </div>
-<% end %>
-<br>
-<%= link_to 'Create a movie list', new_list_path(@list) %>
+
+<div class="home-banner">
+  <h1>Save any kind of movies</h1>
+  <p>
+    <span data-controller="typed-js"></span>
+  </p>
+</div>
+
+<div class="container">
+
+  <div class= "container">
+    <h2>My lists</h1>
+    <span class="btn btn-success">
+      <%= link_to 'Create a movie list', new_list_path(@list) %>
+    </span>
+  </div>
+
+  <div class="container">
+    <% @lists.each do |list| %>
+    <div class='list-card'>
+      <%= link_to list.name, list_path(list) %>
+    </div>
+    <% end %>
+  </div>
+</div>
