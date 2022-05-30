@@ -4,8 +4,8 @@ import Typed from "typed.js"
 export default class extends Controller {
   connect() {
     new Typed(this.element, {
-      strings: ["Classics", "Action", "Comedy", "Drama", "Science Fiction", "Animation"],
-      typeSpeed: 90,
+      strings: ["Animation", "Classics", "Action", "Comedy", "Drama", "Science Fiction"],
+      typeSpeed: 80,
       loop: true
     });
   }
